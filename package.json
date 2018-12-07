@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "sass": "^1.15.1",
+    "tarteaucitronjs": "^1.2.0"
+  },
+  "scripts": {
+    "sass": "sass scss/ttacjs.scss ttacjs.css"
+  },
+  "name": "novembre_tarteaucitron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -1,0 +1,118 @@
+$xxsToXs:	468px;
+$xsToSm: 	768px;
+$smToMd: 	992px;
+$mdToLg: 	1200px;
+
+@import "ttacjs-small";
+
+#tarteaucitronRoot #tarteaucitronAlertBig.ttacjs {
+    height: 100%;
+    overflow: scroll;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    font-family: Arial, Verdana, sans-serif !important;
+    box-sizing: border-box;
+
+    /* Small devices (tablets and up) */
+    @media (min-width: $xsToSm) {
+        flex-wrap: nowrap;
+    }
+
+    .ttacjs {
+        &__title {
+            margin: 0 0 24px;
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 41px;
+        }
+
+        &__text {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+        }
+
+        &__logo {
+            display: block;
+            height: auto;
+            max-width: 170px;
+            max-height: 90px;
+            margin: 0 0 24px;
+        }
+
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 30px;
+            align-content: center;
+
+            /* Small devices (tablets and up) */
+            @media (min-width: $xsToSm) {
+                padding-left: 60px;
+                margin-top: 0;
+            }
+
+            button {
+                cursor: pointer;
+            }
+        }
+
+        &__accept {
+            height: 55px;
+            padding: 0 13px;
+            margin: 0 0 15px;
+            // background-color:  !important;
+            border: 2px solid;
+            border-radius: 3px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 34px;
+            letter-spacing: 2px;
+            color: #000000;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+            box-sizing: border-box;
+            transition: all .2s ease-in-out;
+
+            /* Small devices (tablets and up) */
+            @media (min-width: $xsToSm) {
+                min-width: 315px;
+            }
+
+            &:hover {
+                background-color: transparent !important;
+            }
+        }
+
+        &__personnalize {
+            margin: 0 15px;
+            background-color: transparent !important;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.ttacjs {
+    &__overlay {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, .75);
+    }
+}
