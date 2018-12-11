@@ -61,6 +61,7 @@
 @media (min-width: 768px) {
   #tarteaucitronRoot #tarteaucitronAlertBig.ttacjs {
     flex-wrap: nowrap;
+    height: auto;
   }
 }
 #tarteaucitronRoot #tarteaucitronAlertBig.ttacjs .ttacjs__title {

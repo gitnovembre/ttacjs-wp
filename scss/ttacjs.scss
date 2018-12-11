@@ -19,6 +19,7 @@ $mdToLg: 	1200px;
     /* Small devices (tablets and up) */
     @media (min-width: $xsToSm) {
         flex-wrap: nowrap;
+        height: auto;
     }
 
     .ttacjs {

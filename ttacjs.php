@@ -22,8 +22,8 @@ function ttacjs_head() {
     $explanation = get_option('ttacjs_explanation');
     $color = get_option('ttacjs_color') ? get_option('ttacjs_color') : '#fc631f';
 	?>
-    <link rel="stylesheet" type="text/css" href="<?php echo plugin_dir_url(__FILE__) . 'ttacjs.css' ?>">
-	<script src="<?php echo plugin_dir_url(__FILE__) . 'node_modules/tarteaucitronjs/tarteaucitron.js'; ?>"></script>
+	<script src="<?php echo plugin_dir_url(__FILE__) . 'dist/tarteaucitronjs/tarteaucitron.js'; ?>"></script>
+	<script src="<?php echo plugin_dir_url(__FILE__) . 'dist/ttacjs-wp.js'; ?>"></script>
 	<script type="text/javascript">
 	var tarteaucitronForceLanguage = 'fr';
 	tarteaucitron.init({
