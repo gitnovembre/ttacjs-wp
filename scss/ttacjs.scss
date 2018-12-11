@@ -17,9 +17,11 @@ $mdToLg: 	1200px;
     box-sizing: border-box;
 
     /* Small devices (tablets and up) */
+    @media (min-width: $xxsToXs) {
+        height: auto;
+    }
     @media (min-width: $xsToSm) {
         flex-wrap: nowrap;
-        height: auto;
     }
 
     .ttacjs {
