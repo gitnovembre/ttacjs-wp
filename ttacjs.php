@@ -39,48 +39,48 @@ function ttacjs_head() {
 			"cookieDomain": "<?php echo get_option('ttacjs_domain') ?>" /* Nom de domaine sur lequel sera posé le cookie pour les sous-domaines */
 	});
 
-	replaceOldTtacjs = () => {
+	function replaceOldTtacjs() {
         mutationObserver.disconnect();
-        const oldttacjs = document.getElementById("tarteaucitronAlertBig");
+        var oldttacjs = document.getElementById("tarteaucitronAlertBig");
         if (oldttacjs && getComputedStyle(oldttacjs).display !== "none") {
             // oldttacjs.classList.remove("tarteaucitronAlertBigBottom");
             if(oldttacjs.style.display === "block") {
                 oldttacjs.style.display = "flex";
             }
             oldttacjs.classList.add("ttacjs");
-            oldttacjs.innerHTML = `
-                <div id="tarteaucitronDisclaimerAlert">
-                    <?php echo wp_get_attachment_image($imageID,"large", "", ["class" => "ttacjs__logo"]); ?>
-                <p class="ttacjs__title">
-                    <?php echo $title ?>
-                </p>
-                <p class="ttacjs__text">
-                    <?php echo $explanation ?>
-                </p>
-                </div>
-                <div class="ttacjs__buttons">
-                    <button id="tarteaucitronCloseAlert" class="ttacjs__accept" onclick="tarteaucitron.userInterface.respondAll(true);" style="<?php echo 'background-color: '.$color.'; border-color: '. $color ?>">OK j'accepte</button>
-                    <a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();" style="<?php echo 'color: '. $color ?>">Je veux en savoir plus et paramétrer les cookies</a>
-                </div>
-            `;
+            oldttacjs.innerHTML = '' +
+                '<div id="tarteaucitronDisclaimerAlert">' +
+                    '<?php echo wp_get_attachment_image($imageID,"large", "", ["class" => "ttacjs__logo"]); ?>' +
+                '<p class="ttacjs__title">' +
+                    "<?php echo htmlspecialchars($title) ?>"+
+                '</p>' +
+                '<p class="ttacjs__text"> '+
+                    "<?php echo htmlspecialchars($explanation) ?>" +
+                '</p>' +
+                '</div>' +
+                '<div class="ttacjs__buttons">' +
+                    '<button id="tarteaucitronCloseAlert" class="ttacjs__accept" onclick="tarteaucitron.userInterface.respondAll(true);" style="<?php echo 'background-color: '.$color.'; border-color: '. $color ?>">OK j\'accepte</button>' +
+                    '<a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();" style="<?php echo 'color: '. $color ?>">Je veux en savoir plus et paramétrer les cookies</a>' +
+                '</div>';
+
             if(oldttacjs.style.display !== "none") {
-                const overlay = document.createElement('div');
+                var overlay = document.createElement('div');
                 overlay.classList.add('ttacjs__overlay');
                 document.body.appendChild(overlay);
-                const tarteaucitronCloseAlert = oldttacjs.querySelector('#tarteaucitronCloseAlert');
-                tarteaucitronCloseAlert.addEventListener('click', () => {
+                var tarteaucitronCloseAlert = oldttacjs.querySelector('#tarteaucitronCloseAlert');
+                tarteaucitronCloseAlert.addEventListener('click', function() {
                     overlay.remove();
                 })
-                const tarteaucitronClosePanel = document.querySelector('#tarteaucitronClosePanel');
-                tarteaucitronClosePanel.addEventListener('click', () => {
+                var tarteaucitronClosePanel = document.querySelector('#tarteaucitronClosePanel');
+                tarteaucitronClosePanel.addEventListener('click', function() {
                     overlay.remove();
                 })
             }
         }
     }
     /** Listen when ttacjs is add to the DOM */
-    const mutationObserver = new MutationObserver(mutations => {
-        mutations.forEach((mutation) => {
+    var mutationObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
             if(mutation.target.getAttribute('id') === "tarteaucitronRoot") {
                 replaceOldTtacjs();
             }
