@@ -5,31 +5,69 @@ $mdToLg: 	1200px;
 
 @import "ttacjs-small";
 
+.ttacjs__overlay {
+    height: 110%;
+    bottom: 0;
+}
+
 #tarteaucitronRoot #tarteaucitronAlertBig.ttacjs {
-    height: 100%;
-    overflow: scroll;
+    width: 94%;
+    // height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    margin: 0 3%;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 60px;
-    overflow-y: scroll;
+    justify-content: flex-start;
+    padding: 10vw;
+    overflow: scroll;
     background-color: #ffffff;
     font-family: Arial, Verdana, sans-serif !important;
     box-sizing: border-box;
 
+    @media (min-width: 321px) {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+    }
+
     /* Small devices (tablets and up) */
     @media (min-width: $xxsToXs) {
         height: auto;
+        bottom: 0;
+        overflow: auto;
+        padding: 4vw;
     }
-    @media (min-width: $xsToSm) {
-        flex-wrap: nowrap;
+    @media (min-width: $smToMd) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        overflow: auto;
+    }
+
+    #tarteaucitronDisclaimerAlert {
+        width: 100%;
+        height: auto;
+
+        @media (min-width: $smToMd) {
+            width: calc(70% - 20px);
+            padding-right: 20px;
+        }
     }
 
     .ttacjs {
         &__title {
             margin: 0 0 24px;
-            font-size: 34px;
-            font-weight: 700;
-            line-height: 41px;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.3;
+
+            @media (min-width: $smToMd) {
+                font-size: 30px;
+            }
         }
 
         &__text {
@@ -41,23 +79,32 @@ $mdToLg: 	1200px;
 
         &__logo {
             display: block;
+            width: auto;
             height: auto;
-            max-width: 170px;
-            max-height: 90px;
-            margin: 0 0 24px;
+            max-height: 50px;
+            margin: 0 auto 24px;
+
+            @media (min-width: $smToMd) {
+                display: none;
+            }
         }
 
         &__buttons {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            margin-top: 30px;
+            justify-content: space-evenly;
             align-content: center;
+            margin-top: 5px;
 
             /* Small devices (tablets and up) */
             @media (min-width: $xsToSm) {
-                padding-left: 60px;
+                // padding-left: 60px;
                 margin-top: 0;
+            }
+            
+            @media (min-width: $smToMd) {
+                flex-direction: row;
+                width: 30%;
             }
 
             button {
@@ -66,44 +113,43 @@ $mdToLg: 	1200px;
         }
 
         &__accept {
+            align-self: flex-start;
             height: 55px;
-            padding: 0 13px;
+            padding: 0 19px;
             margin: 0 0 15px;
             // background-color:  !important;
-            border: 2px solid;
-            border-radius: 3px;
+            border: 1px solid;
             font-family: Arial, sans-serif;
             font-size: 14px;
             font-weight: 600;
-            line-height: 34px;
-            letter-spacing: 2px;
-            color: #000000;
             text-align: center;
             text-decoration: none;
-            text-transform: uppercase;
             white-space: nowrap;
-            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
             box-sizing: border-box;
             transition: all .2s ease-in-out;
 
-            /* Small devices (tablets and up) */
-            @media (min-width: $xsToSm) {
-                min-width: 315px;
-            }
-
-            &:hover {
-                background-color: transparent !important;
+            @media (min-width: $smToMd) {
+                margin-bottom: 0;
+                margin-left: 10px;
             }
         }
 
         &__personnalize {
-            margin: 0 15px;
+            display: block;
+            align-self: center;
+            padding: 5px 0;
+            margin: 0 0 15px;
             background-color: transparent !important;
             font-size: 14px;
+            font-weight: 400;
             line-height: 21px;
-            text-align: center;
-            text-decoration: underline;
+            text-align: left;
+            text-decoration: none;
             cursor: pointer;
+
+            @media (min-width: $smToMd) {
+                margin-bottom: 0;
+            }
         }
     }
 }

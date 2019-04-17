@@ -62,6 +62,10 @@ $cookie_trackers = get_option('ttacjs_code');
 		<input type="text" id="ttacjs_color" name="ttacjs_color" 
 			placeholder="" value="<?php echo get_option('ttacjs_color'); ?>"/>
 		<br /><br />
+		<h3>Couleur du texte :</h3>
+		<input type="text" id="ttacjs_textColor" name="ttacjs_textColor" 
+			placeholder="" value="<?php echo get_option('ttacjs_textColor'); ?>"/>
+		<br /><br />
 		<h3>Titre du bandeau :</h3>
 		<input type="text" id="ttacjs_title" name="ttacjs_title" 
 			placeholder="" value="<?php echo get_option('ttacjs_title'); ?>"/>
@@ -70,6 +74,11 @@ $cookie_trackers = get_option('ttacjs_code');
 		<h3>Texte du bandeau :</h3>
 		<textarea type="text" id="ttacjs_explanation" style="margin-top: 0px;margin-bottom: 0px;height: 300px;width: 600px;" name="ttacjs_explanation" 
 			placeholder="" /><?php echo get_option('ttacjs_explanation'); ?></textarea>
+		<br /><br />
+
+		<h3>Texte du bouton :</h3>
+		<input type="text" id="ttacjs_buttonText" name="ttacjs_buttonText" 
+			placeholder="" value="<?php echo get_option('ttacjs_buttonText'); ?>"/>
 		<br /><br />
 
 		<!-- <label for="ttacjs_pos">Position du bandeau</label><br/>

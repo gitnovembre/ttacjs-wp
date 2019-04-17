@@ -6,7 +6,8 @@ if ( isset( $_POST['submit_image_selector'] ) && isset( $_POST['ttacjs_image'] )
 	?>
     <div class='image-preview-wrapper'>
         <img id='image-preview' src='<?php echo wp_get_attachment_url( get_option( 'ttacjs_image' ) ); ?>' width='200'>
-    </div>
+	</div>
+	<label for="">Pour les images "carrées", il est conseillé d'uploader une image de max 90-100px de large.</label><br />
     <input id="upload_image_button" type="button" class="button" value="<?php _e( 'Ajouter une image' ); ?>" />
     <input type='hidden' name='ttacjs_image' id='ttacjs_image' value='<?php echo get_option( 'ttacjs_image' ); ?>'>
 <?php

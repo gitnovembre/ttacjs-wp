@@ -20,7 +20,9 @@ function ttacjs_head() {
 	$imageID = get_option('ttacjs_image');
     $title = get_option('ttacjs_title');
     $explanation = get_option('ttacjs_explanation');
-    $color = get_option('ttacjs_color') ? get_option('ttacjs_color') : '#fc631f';
+    $color = get_option('ttacjs_color') ? get_option('ttacjs_color') : '#000000';
+    $textColor = get_option('ttacjs_textColor') ? get_option('ttacjs_textColor') : '#ffffff';
+    $buttonText = get_option('ttacjs_buttonText') ? get_option('ttacjs_buttonText') : "J'ACCEPTE";
 	?>
 	<script src="<?php echo plugin_dir_url(__FILE__) . 'dist/tarteaucitronjs/tarteaucitron.js'; ?>"></script>
 	<script src="<?php echo plugin_dir_url(__FILE__) . 'dist/ttacjs-wp.js'; ?>"></script>
@@ -59,8 +61,11 @@ function ttacjs_head() {
                 '</p>' +
                 '</div>' +
                 '<div class="ttacjs__buttons">' +
-                    '<button id="tarteaucitronCloseAlert" class="ttacjs__accept" onclick="tarteaucitron.userInterface.respondAll(true);" style="<?php echo 'background-color: '.$color.'; border-color: '. $color ?>">OK j\'accepte</button>' +
-                    '<a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();" style="<?php echo 'color: '. $color ?>">Je veux en savoir plus et paramétrer les cookies</a>' +
+                '<style>#tarteaucitronPersonalize { color: <?php echo $color; ?> !important; } #tarteaucitronCloseAlert { background-color: <?php echo $color; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $textColor; ?> !important; } #tarteaucitronCloseAlert:hover { background-color: <?php echo $textColor; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $color; ?> !important; }</style>' +
+                    '<a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();">MODIFIER MES PRÉFÉRENCES' + 
+                    '<svg width="12" height="12" style="margin-left: 5px" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"  version="1.1" x="0px" y="0px" viewBox="0 0 100 100"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:<?php echo $color ?>;enable-background:accumulate;" d="m 50.000045,1024.5809 3.34371,-2.9688 38,-33.99999 -6.6875,-7.4687 -34.65621,30.99999 -34.6563,-30.99999 -6.6875,7.4687 38,33.99999 3.3438,2.9688 z" fill="<?php echo $color; ?>" fill-opacity="1" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"></path></g></svg>' +
+                    '</a>' +
+                    '<button id="tarteaucitronCloseAlert" class="ttacjs__accept" onclick="tarteaucitron.userInterface.respondAll(true);" style="<?php echo 'background-color: '.$color.'; border-color: '. $color ?>"><?php echo addslashes($buttonText); ?></button>' +
                 '</div>';
 
             if(oldttacjs.style.display !== "none") {
