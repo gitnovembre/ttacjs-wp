@@ -12,6 +12,7 @@ if ( isset( $_POST['submit_image_selector'] ) && isset( $_POST['ttacjs_image'] )
     <input type='hidden' name='ttacjs_image' id='ttacjs_image' value='<?php echo get_option( 'ttacjs_image' ); ?>'>
 <?php
 $my_saved_attachment_post_id = get_option( 'ttacjs_image', 0 );
+if($my_saved_attachment_post_id == '') { $my_saved_attachment_post_id = 0; }
 	?><script type='text/javascript'>
 		jQuery( document ).ready( function( $ ) {
 			// Uploading files
