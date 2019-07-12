@@ -14,7 +14,7 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.2.0",
     "autoprefixer": "^9.4.2",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.0.0",
     "node-sass": "^4.11.0",
