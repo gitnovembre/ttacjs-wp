@@ -1,0 +1,190 @@
+$xxsToXs:	468px;
+$xsToSm: 	768px;
+$smToMd: 	992px;
+$mdToLg: 	1200px;
+
+@import "ttacjs-small";
+
+.ttacjs__overlay {
+    height: 110%;
+    bottom: 0;
+}
+
+#tarteaucitronRoot #tarteaucitronAlertBig.ttacjs {
+    width: 94%;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    margin: 0 3%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10vw;
+    overflow: scroll;
+    background-color: #ffffff;
+    font-family: Arial, Verdana, sans-serif !important;
+    box-sizing: border-box;
+
+    @media (min-width: 321px) {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+    }
+
+    /* Small devices (tablets and up) */
+    @media (min-width: $xxsToXs) {
+        height: auto;
+        bottom: 0;
+        overflow: auto;
+        padding: 4vw;
+    }
+    @media (min-width: $smToMd) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        overflow: auto;
+    }
+
+    #tarteaucitronDisclaimerAlert {
+        width: 100%;
+        height: auto;
+
+        @media (min-width: $smToMd) {
+            width: calc(70% - 20px);
+            padding-right: 20px;
+        }
+    }
+
+    .ttacjs {
+        &__title {
+            margin: 0 0 24px;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.3;
+
+            @media (min-width: $smToMd) {
+                font-size: 30px;
+            }
+        }
+
+        &__text {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+        }
+
+        &__logo {
+            display: block;
+            width: auto;
+            height: auto;
+            max-height: 50px;
+            margin: 0 auto 24px;
+
+            @media (min-width: $smToMd) {
+                display: none;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-content: center;
+            margin-top: 5px;
+
+            /* Small devices (tablets and up) */
+            @media (min-width: $xsToSm) {
+                margin-top: 0;
+            }
+            
+            @media (min-width: $smToMd) {
+                flex-direction: column;
+                width: 30%;
+
+                div {
+                    margin: 4px 0;
+                }
+            }
+
+            button {
+                cursor: pointer;
+            }
+        }
+
+        &__accept {
+            align-self: flex-start;
+            height: 55px;
+            padding: 0 19px;
+            margin: 0 0 15px;
+            border: 1px solid;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+            box-sizing: border-box;
+            transition: all .2s ease-in-out;
+
+            @media (min-width: $smToMd) {
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+        }
+
+        &__personnalize {
+            display: block;
+            align-self: center;
+            padding: 5px 0;
+            margin: 0 0 15px;
+            background-color: transparent !important;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            text-align: left;
+            text-decoration: none;
+            cursor: pointer;
+
+            @media (min-width: $smToMd) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.ttacjs {
+    &__overlay {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, .75);
+    }
+}
+
+.ttacjs__refuse {
+    align-self: flex-start;
+    height: 55px;
+    padding: 0 19px;
+    margin: 0 0 15px;
+    border: 1px solid;
+    font-family: Arial, sans-serif;
+    font-size: 14px !important;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+
+    @media (min-width: $smToMd) {
+        margin-bottom: 0;
+        margin-right: 10px;
+        padding: 0 19px;
+    }
+}

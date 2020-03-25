@@ -1,0 +1,58 @@
+#tarteaucitronAlertSmall {
+    &.tarteaucitronAlertSmallBottom { //stylelint-disable-line
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+#tarteaucitronAlertSmall .ttacjs-small {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    position: relative;
+    background-color: #ffffff;
+    border: 2px solid #fc631f;
+    border-radius: 50px;
+
+    .ttacjs-small {
+        &__gestion#tarteaucitronManager {
+            padding: 15px 75px 15px 30px;
+            background-color: transparent;
+            border: 0;
+            font-size: 15px !important;
+            font-weight: 600;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        &__number#tarteaucitronCookiesNumber {
+            width: 63px;
+            height: 63px;
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            padding: 0;
+            background-color: #fc631f;
+            border: 0;
+            border-radius: 50%;
+            font-size: 15px !important;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        &__color {
+            &_green#tarteaucitronDotGreen {
+                background-color: #43a047 !important;
+            }
+
+            &_green#tarteaucitronDotGreen {
+                background-color: #fdd835 !important;
+            }
+
+            &_green#tarteaucitronDotGreen {
+                background-color: #e53935 !important;
+            }
+        }
+    }
+}
