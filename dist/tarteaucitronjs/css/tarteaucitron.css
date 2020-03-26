@@ -337,7 +337,7 @@ div#tarteaucitronServices {
 }
 
 #tarteaucitronAlertSmall #tarteaucitronCookiesListContainer #tarteaucitronCookiesList .tarteaucitronTitle {
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     margin: 0;
 }
 

@@ -83,7 +83,7 @@ $cookie_trackers = get_option('ttacjs_code');
 
 		<h3>Texte du bouton pour tout refuser:</h3>
 		<input type="text" id="ttacjs_buttonTextRefuse" name="ttacjs_buttonTextRefuse" 
-			placeholder="" value="<?php echo get_option('ttacjs_buttonTextReuse'); ?>"/>
+			placeholder="" value="<?php echo get_option('ttacjs_buttonTextRefuse'); ?>"/>
 		<br /><br />
 
 		<!-- <label for="ttacjs_pos">Position du bandeau</label><br/>
