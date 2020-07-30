@@ -24,6 +24,7 @@ function ttacjs_head() {
     $textColor = get_option('ttacjs_textColor') ? get_option('ttacjs_textColor') : '#ffffff';
     $buttonTextAccept = get_option('ttacjs_buttonTextAccept') ? get_option('ttacjs_buttonTextAccept') : "J'ACCEPTE";
     $buttonTextRefuse = get_option('ttacjs_buttonTextRefuse') ? get_option('ttacjs_buttonTextRefuse') : "JE REFUSE";
+    $buttonTextPersonnalize = get_option('ttacjs_buttonTextPersonnalize') ? get_option('ttacjs_buttonTextPersonnalize') : "JE REFUSE";
 	?>
 	<script src="<?php echo plugin_dir_url(__FILE__) . 'dist/tarteaucitronjs/tarteaucitron.js'; ?>"></script>
 	<script src="<?php echo plugin_dir_url(__FILE__) . 'dist/ttacjs-wp.js'; ?>"></script>
@@ -68,7 +69,7 @@ function ttacjs_head() {
                 '<button id="tarteaucitronCloseAlert" class="ttacjs__refuse" onclick="tarteaucitron.userInterface.respondAll(false);" style="<?php echo ' border: 1px solid '. $color ?>"><?php echo addslashes($buttonTextRefuse); ?></button>' +
                 '</div>'+
                 '<div>'+
-                '<a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();">PERSONNALISER' + 
+                '<a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();"><?php echo addslashes($buttonTextPersonnalize); ?>' + 
                 '<svg width="12" height="12" style="margin-left: 5px" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"  version="1.1" x="0px" y="0px" viewBox="0 0 100 100"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:<?php echo $color ?>;enable-background:accumulate;" d="m 50.000045,1024.5809 3.34371,-2.9688 38,-33.99999 -6.6875,-7.4687 -34.65621,30.99999 -34.6563,-30.99999 -6.6875,7.4687 38,33.99999 3.3438,2.9688 z" fill="<?php echo $color; ?>" fill-opacity="1" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"></path></g></svg>' +
                 '</a>' +
                 '</div>'

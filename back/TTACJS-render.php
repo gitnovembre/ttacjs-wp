@@ -86,6 +86,11 @@ $cookie_trackers = get_option('ttacjs_code');
 			placeholder="" value="<?php echo get_option('ttacjs_buttonTextRefuse'); ?>"/>
 		<br /><br />
 
+		<h3>Texte du bouton pour personnaliser:</h3>
+		<input type="text" id="ttacjs_buttonTextPersonnalize" name="ttacjs_buttonTextPersonnalize" 
+			placeholder="" value="<?php echo get_option('ttacjs_buttonTextPersonnalize'); ?>"/>
+		<br /><br />
+
 		<!-- <label for="ttacjs_pos">Position du bandeau</label><br/>
 		<input type="text" id="ttacjs_pos" style="margin-top: 0px;margin-bottom: 0px;width: 600px;" name="ttacjs_pos" placeholder="top ou bottom" value="<?=  get_option('ttacjs_pos'); ?>" />
 		<br/><br/> -->
