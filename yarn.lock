@@ -4063,9 +4063,9 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
-tarteaucitronjs@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.2.0.tgz#8f22d35a634fcb0bea5cdff845f0bf80f3a9eaf2"
+tarteaucitronjs@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.9.1.tgz#5f2d7826f14da50454947a70d16c593af8107db2"
 
 terser-webpack-plugin@^1.1.0:
   version "1.3.0"
