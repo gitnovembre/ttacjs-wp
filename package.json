@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "sass": "^1.32.12",
+    "sass": "^1.35.1",
     "tarteaucitronjs": "^1.2.0"
   },
   "scripts": {
