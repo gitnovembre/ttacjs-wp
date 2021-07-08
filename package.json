@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "sass": "^1.35.2",
-    "tarteaucitronjs": "^1.2.0"
+    "tarteaucitronjs": "^1.9.3"
   },
   "scripts": {
     "build": "webpack -p index.js"
