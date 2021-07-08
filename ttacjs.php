@@ -24,7 +24,7 @@ function ttacjs_head() {
     $textColor = get_option('ttacjs_textColor') ? get_option('ttacjs_textColor') : '#ffffff';
     $buttonTextAccept = get_option('ttacjs_buttonTextAccept') ? get_option('ttacjs_buttonTextAccept') : "J'ACCEPTE";
     $buttonTextRefuse = get_option('ttacjs_buttonTextRefuse') ? get_option('ttacjs_buttonTextRefuse') : "JE REFUSE";
-    $buttonTextPersonnalize = get_option('ttacjs_buttonTextPersonnalize') ? get_option('ttacjs_buttonTextPersonnalize') : "JE REFUSE";
+    $buttonTextPersonnalize = get_option('ttacjs_buttonTextPersonnalize') ? get_option('ttacjs_buttonTextPersonnalize') : "personnaliser";
     ?>
     <script src="<?php echo plugin_dir_url(__FILE__) . 'dist/tarteaucitronjs/tarteaucitron.js'; ?>"></script>
     <script src="<?php echo plugin_dir_url(__FILE__) . 'dist/ttacjs-wp.js'; ?>"></script>
@@ -59,14 +59,14 @@ function ttacjs_head() {
                     "<?php echo htmlspecialchars($title) ?>"+
                     '</p>' +
                     '<p class="ttacjs__text"> '+
-                    "<?php echo htmlspecialchars($explanation) ?>" +
+                    `<?php echo $explanation ?>` +
                     '</p>' +
                     '</div>' +
                     '<div class="ttacjs__buttons">' +
-                    '<style>#tarteaucitronPersonalize { color: <?php echo $color; ?> !important; } .ttacjs__accept { background-color: <?php echo $color; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $textColor; ?> !important; } .ttacjs__accept:hover { background-color: <?php echo $textColor; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $color; ?> !important; } .ttacjs__refuse {border-color: <?php echo $color; ?>; color: <?php echo $color; ?> !important; background-color: <?php echo $textColor;?>} .ttacjs__refuse:hover { background-color: <?php echo $color; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $textColor; ?> !important; }</style>' +
+                    '<style>#tarteaucitronPersonalize { color: <?php echo $color; ?> !important; background: transparent !important; border: none !important; height: auto !important;} .ttacjs__accept { background-color: <?php echo $color; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $textColor; ?> !important; } .ttacjs__accept:hover { background-color: <?php echo $textColor; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $color; ?> !important; } .ttacjs__refuse {border-color: <?php echo $color; ?>; color: <?php echo $color; ?> !important; background-color: <?php echo $textColor;?>} .ttacjs__refuse:hover { background-color: <?php echo $color; ?> !important; border-color: <?php echo $color; ?> !important; color: <?php echo $textColor; ?> !important; }</style>' +
                     '<div>'+
-                    '<button id="tarteaucitronCloseAlert" class="ttacjs__accept" onclick="tarteaucitron.userInterface.respondAll(true);" style="<?php echo 'background-color: '.$color.'; border: 1px solid '. $color ?>"><?php echo addslashes($buttonTextAccept); ?></button>' +
-                    '<button id="tarteaucitronCloseAlert" class="ttacjs__refuse" onclick="tarteaucitron.userInterface.respondAll(false);" style="<?php echo ' border: 1px solid '. $color ?>"><?php echo addslashes($buttonTextRefuse); ?></button>' +
+                    '<button id="tarteaucitronCloseAlertAccept" class="ttacjs__accept" onclick="tarteaucitron.userInterface.respondAll(true);" style="<?php echo 'background-color: '.$color.'; border: 1px solid '. $color ?>"><?php echo addslashes($buttonTextAccept); ?></button>' +
+                    '<button id="tarteaucitronCloseAlertRefuse" class="ttacjs__refuse" onclick="tarteaucitron.userInterface.respondAll(false);" style="<?php echo ' border: 1px solid '. $color ?>"><?php echo addslashes($buttonTextRefuse); ?></button>' +
                     '</div>'+
                     '<div>'+
                     '<a id="tarteaucitronPersonalize" class="ttacjs__personnalize" onclick="tarteaucitron.userInterface.openPanel();"><?php echo addslashes($buttonTextPersonnalize); ?>' +
@@ -79,14 +79,20 @@ function ttacjs_head() {
                     var overlay = document.createElement('div');
                     overlay.classList.add('ttacjs__overlay');
                     document.body.appendChild(overlay);
-                    var tarteaucitronCloseAlert = oldttacjs.querySelectorAll('#tarteaucitronCloseAlert');
+                    var tarteaucitronCloseAlert = oldttacjs.querySelectorAll('.ttacjs__accept, .ttacjs__refuse');
+                    console.log(tarteaucitronCloseAlert);
                     for(var i = 0; i < tarteaucitronCloseAlert.length; i++) {
                         tarteaucitronCloseAlert[i].addEventListener('click', function() {
+                            console.log(tarteaucitronCloseAlert[i]);
                             overlay.remove();
                         });
                     }
                     var tarteaucitronClosePanel = document.querySelector('#tarteaucitronClosePanel');
                     tarteaucitronClosePanel.addEventListener('click', function() {
+                        overlay.remove();
+                    });
+                    console.log(document.querySelector('#tarteaucitronBack'));
+                    document.querySelector('#tarteaucitronBack').addEventListener('click', function() {
                         overlay.remove();
                     })
                 }
