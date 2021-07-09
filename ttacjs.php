@@ -16,7 +16,6 @@ require('back/TTACJS-menu.php');
 // Front Office
 
 function ttacjs_head() {
-    $show = get_option('ttacjs_show') == 1 ? 'true' : 'false';
     $imageID = get_option('ttacjs_image');
     $title = get_option('ttacjs_title');
     $explanation = get_option('ttacjs_explanation');
@@ -32,12 +31,12 @@ function ttacjs_head() {
         var tarteaucitronForceLanguage = 'fr';
         tarteaucitron.init({
             "hashtag": "<?php echo get_option('ttacjs_hash') ?>", /* Ouverture automatique du panel avec le hashtag */
-            "highPrivacy": false, /* désactiver le consentement implicite (en naviguant) ? */
+            "highPrivacy": true,
             "orientation": "<?php echo get_option('ttacjs_pos') ?>", /* le bandeau doit être en haut (top) ou en bas (bottom) ? */
             // "orientation": "bottom",
             "adblocker": false, /* Afficher un message si un adblocker est détecté */
-            "showAlertSmall": <?php echo $show ?>, /* afficher le petit bandeau en bas à droite ? */
-            // "showAlertSmall": <?php //if (get_option('ttacjs_show') == '1') { echo true; } else { echo false; } ?>, /* afficher le petit bandeau en bas à droite ? */
+            "showAlertSmall": false, /* afficher le petit bandeau en bas à droite ? */
+            "showIcon": false, /* Show cookie icon to manage cookies */
             "cookieslist": true, /* Afficher la liste des cookies installés ? */
             "removeCredit": true, /* supprimer le lien vers la source ? */
             "cookieDomain": "<?php echo get_option('ttacjs_domain') ?>" /* Nom de domaine sur lequel sera posé le cookie pour les sous-domaines */
@@ -54,7 +53,7 @@ function ttacjs_head() {
                 oldttacjs.classList.add("ttacjs");
                 oldttacjs.innerHTML = '' +
                     '<div id="tarteaucitronDisclaimerAlert">' +
-                    '<?php echo wp_get_attachment_image($imageID,"large", "", ["class" => "ttacjs__logo"]); ?>' +
+                    '<?php echo wp_get_attachment_image($imageID,"full", "", ["class" => "ttacjs__logo"]); ?>' +
                     '<p class="ttacjs__title">' +
                     "<?php echo htmlspecialchars($title) ?>"+
                     '</p>' +
@@ -93,7 +92,9 @@ function ttacjs_head() {
                     });
                     console.log(document.querySelector('#tarteaucitronBack'));
                     document.querySelector('#tarteaucitronBack').addEventListener('click', function() {
-                        overlay.remove();
+                        if(document.querySelector('.tarteaucitronIsDenied') || document.querySelector('.tarteaucitronIsAllowed')) {
+                            overlay.remove();
+                        }
                     })
                 }
             }
@@ -130,7 +131,7 @@ function ARC_activate() {
     update_option( 'ttacjs_domain', '' );
     update_option( 'ttacjs_code', '' );
     update_option( 'ttacjs_pos', 'bottom' );
-    update_option( 'ttacjs_show', false );
+    // update_option( 'ttacjs_show', false );
     update_option( 'ttacjs_hash', '' );
 
 }

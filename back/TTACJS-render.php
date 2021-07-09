@@ -13,7 +13,7 @@ $cookie_trackers = get_option('ttacjs_code');
 		<input type="text" id="ttacjs_hash" style="margin-top: 0px;margin-bottom: 0px;width: 600px;" name="ttacjs_hash" placeholder="#cookies" value="<?php echo get_option('ttacjs_hash'); ?>" />
 		<br/><br/>
 
-		<div>Afficher le bandeau</div><br/>
+		<?php /*<div>Afficher le bandeau</div><br/>
 		<input type="radio" id="ttacjs_show_true" name="ttacjs_show" value="1"
 			<?php
 				if ( get_option('ttacjs_show') == '1') {
@@ -30,7 +30,7 @@ $cookie_trackers = get_option('ttacjs_code');
 			?>
 		/>
 		<label for="ttacjs_show_false">Non</label><br/>
-		<br/><br/>
+		<br/><br/> */ ?>
 
 		<label for="ttacjs_pos">Position du bandeau</label><br/>
 		<select name="ttacjs_pos" id="ttacjs_pos">

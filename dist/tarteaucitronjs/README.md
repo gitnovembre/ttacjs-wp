@@ -1,5 +1,5 @@
-[![](https://data.jsdelivr.com/v1/package/gh/AmauriC/tarteaucitron.js/badge)](https://www.jsdelivr.com/package/gh/AmauriC/tarteaucitron.js) 
-[![npm](https://img.shields.io/npm/v/tarteaucitronjs.svg)](https://www.npmjs.com/package/tarteaucitronjs) [![GitHub contributors](https://img.shields.io/github/contributors/AmauriC/tarteaucitron.js.svg)](https://github.com/AmauriC/tarteaucitron.js/graphs/contributors)
+[![](https://data.jsdelivr.com/v1/package/gh/AmauriC/tarteaucitron.js/badge)](https://www.jsdelivr.com/package/gh/AmauriC/tarteaucitron.js)
+[![npm](https://img.shields.io/npm/v/tarteaucitronjs.svg)](https://www.npmjs.com/package/tarteaucitronjs) [![GitHub contributors](https://img.shields.io/github/contributors/AmauriC/tarteaucitron.js.svg)](https://github.com/AmauriC/tarteaucitron.js/graphs/contributors) [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/AmauriC)
 
 tarteaucitron.js
 ================
@@ -21,35 +21,74 @@ Bonus:
 
 
 # Installation guide
-[Visit opt-out.ferank.eu](https://opt-out.ferank.eu/)
+[Visit tarteaucitron.io](https://tarteaucitron.io/)
 
 
 # How to use
 
 ```html
-<script type="text/javascript" src="/tarteaucitron/tarteaucitron.js"></script>
+<script src="/tarteaucitron/tarteaucitron.js"></script>
 
-<script type="text/javascript">
+<script>
 tarteaucitron.init({
     "privacyUrl": "", /* Privacy policy url */
 
     "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
-    "cookieName": "tartaucitron", /* Cookie name */
+    "cookieName": "tarteaucitron", /* Cookie name */
+
+    "orientation": "middle", /* Banner position (top - bottom - middle - popup) */
+
+    "groupServices": false, /* Group services by category */
+
+    "showAlertSmall": false, /* Show the small banner on bottom right */
+    "cookieslist": false, /* Show the cookie list */
     
-    "orientation": "top", /* Banner position (top - bottom) */
-    "showAlertSmall": true, /* Show the small banner on bottom right */
-    "cookieslist": true, /* Show the cookie list */
+    "showIcon": true, /* Show cookie icon to manage cookies */
+    // "iconSrc": "", /* Optionnal: URL or base64 encoded image */
+    "iconPosition": "BottomRight", /* Position of the icon between BottomRight, BottomLeft, TopRight and TopLeft */
 
     "adblocker": false, /* Show a Warning if an adblocker is detected */
+
+    "DenyAllCta" : true, /* Show the deny all button */
     "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
-    "highPrivacy": false, /* Disable auto consent */
+    "highPrivacy": true, /* HIGHLY RECOMMANDED Disable auto consent */
+
     "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
 
     "removeCredit": false, /* Remove credit link */
     "moreInfoLink": true, /* Show more info link */
-    "useExternalCss": false /* If false, the tarteaucitron.css file will be loaded */
+    "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
 
-    //"cookieDomain": ".my-multisite-domaine.fr" /* Shared cookie for subdomain website */
+    //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for subdomain website */
+
+    "readmoreLink": "", /* Change the default readmore link pointing to tarteaucitron.io */
+    
+    "mandatory": true /* Show a message about mandatory cookies */
 });
 </script>
 ```
+
+# Create custom service
+```js
+tarteaucitron.services.mycustomservice = {
+  "key": "mycustomservice",
+  "type": "ads|analytic|api|comment|other|social|support|video",
+  "name": "MyCustomService",
+  "needConsent": true,
+  "cookies": ['cookie', 'cookie2'],
+  "readmoreLink": "/custom_read_more", // If you want to change readmore link
+  "js": function () {
+    "use strict";
+    // When user allow cookie
+  },
+  "fallback": function () {
+    "use strict";
+    // when use deny cookie
+  }
+};
+```
+
+## Thanks to the sponsors 😊
+
+| Be the first sponsor! |
+|:---:|

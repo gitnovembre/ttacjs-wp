@@ -25,6 +25,7 @@ $mdToLg: 	1200px;
     box-sizing: border-box;
 
     @media (min-width: 321px) {
+        height: 100vh;
         position: fixed;
         top: auto;
         bottom: 0;
@@ -79,8 +80,8 @@ $mdToLg: 	1200px;
 
         &__logo {
             display: block;
-            width: auto;
-            height: auto;
+            width: auto !important;
+            height: auto !important;
             max-height: 50px;
             margin: 0 auto 24px;
 
@@ -95,8 +96,7 @@ $mdToLg: 	1200px;
             justify-content: space-evenly;
             align-content: center;
             margin-top: 5px;
-            margin-left: 60px;
-
+            
             /* Small devices (tablets and up) */
             @media (min-width: $xsToSm) {
                 margin-top: 0;
@@ -105,6 +105,7 @@ $mdToLg: 	1200px;
             @media (min-width: $smToMd) {
                 flex-direction: column;
                 width: 30%;
+                margin-left: 60px;
 
                 div {
                     margin: 10px 0;
@@ -116,11 +117,12 @@ $mdToLg: 	1200px;
             }
         }
 
-        &__accept {
+        &__accept,
+        &__refuse {
             align-self: flex-start;
             height: 55px;
             padding: 0 19px;
-            margin: 0 0 15px;
+            margin: 0 20px 15px 0;
             border: 1px solid;
             font-family: Arial, sans-serif;
             font-size: 14px;
@@ -169,24 +171,24 @@ $mdToLg: 	1200px;
     }
 }
 
-.ttacjs__refuse {
-    align-self: flex-start;
-    height: 55px;
-    padding: 0 19px;
-    margin: 0 0 15px;
-    border: 1px solid;
-    font-family: Arial, sans-serif;
-    font-size: 14px !important;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    box-sizing: border-box;
-    transition: all .2s ease-in-out;
+// .ttacjs__refuse {
+//     align-self: flex-start;
+//     height: 55px;
+//     padding: 0 19px;
+//     margin: 0 0 15px;
+//     border: 1px solid;
+//     font-family: Arial, sans-serif;
+//     font-size: 14px !important;
+//     font-weight: 600;
+//     text-align: center;
+//     text-decoration: none;
+//     white-space: nowrap;
+//     box-sizing: border-box;
+//     transition: all .2s ease-in-out;
 
-    @media (min-width: $smToMd) {
-        margin-bottom: 0;
-        margin-right: 10px;
-        padding: 0 19px;
-    }
-}
+//     @media (min-width: $smToMd) {
+//         margin-bottom: 0;
+//         margin-right: 10px;
+//         padding: 0 19px;
+//     }
+// }
