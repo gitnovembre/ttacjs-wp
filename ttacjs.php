@@ -79,10 +79,8 @@ function ttacjs_head() {
                     overlay.classList.add('ttacjs__overlay');
                     document.body.appendChild(overlay);
                     var tarteaucitronCloseAlert = oldttacjs.querySelectorAll('.ttacjs__accept, .ttacjs__refuse');
-                    console.log(tarteaucitronCloseAlert);
                     for(var i = 0; i < tarteaucitronCloseAlert.length; i++) {
                         tarteaucitronCloseAlert[i].addEventListener('click', function() {
-                            console.log(tarteaucitronCloseAlert[i]);
                             overlay.remove();
                         });
                     }
@@ -90,7 +88,6 @@ function ttacjs_head() {
                     tarteaucitronClosePanel.addEventListener('click', function() {
                         overlay.remove();
                     });
-                    console.log(document.querySelector('#tarteaucitronBack'));
                     document.querySelector('#tarteaucitronBack').addEventListener('click', function() {
                         if(document.querySelector('.tarteaucitronIsDenied') || document.querySelector('.tarteaucitronIsAllowed')) {
                             overlay.remove();
