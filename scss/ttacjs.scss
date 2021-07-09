@@ -71,6 +71,7 @@ $mdToLg: 	1200px;
 
         &__text {
             margin: 0;
+            margin-bottom: 15px;
             font-size: 14px;
             font-weight: 400;
             line-height: 21px;
@@ -94,16 +95,20 @@ $mdToLg: 	1200px;
             justify-content: space-evenly;
             align-content: center;
             margin-top: 5px;
+            margin-left: 60px;
 
             /* Small devices (tablets and up) */
             @media (min-width: $xsToSm) {
-                // padding-left: 60px;
                 margin-top: 0;
             }
             
             @media (min-width: $smToMd) {
-                flex-direction: row;
+                flex-direction: column;
                 width: 30%;
+
+                div {
+                    margin: 10px 0;
+                }
             }
 
             button {
@@ -116,7 +121,6 @@ $mdToLg: 	1200px;
             height: 55px;
             padding: 0 19px;
             margin: 0 0 15px;
-            // background-color:  !important;
             border: 1px solid;
             font-family: Arial, sans-serif;
             font-size: 14px;
@@ -129,7 +133,7 @@ $mdToLg: 	1200px;
 
             @media (min-width: $smToMd) {
                 margin-bottom: 0;
-                margin-left: 10px;
+                margin-right: 20px;
             }
         }
 
@@ -162,5 +166,27 @@ $mdToLg: 	1200px;
         left: 0;
         z-index: 99;
         background-color: rgba(0, 0, 0, .75);
+    }
+}
+
+.ttacjs__refuse {
+    align-self: flex-start;
+    height: 55px;
+    padding: 0 19px;
+    margin: 0 0 15px;
+    border: 1px solid;
+    font-family: Arial, sans-serif;
+    font-size: 14px !important;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+
+    @media (min-width: $smToMd) {
+        margin-bottom: 0;
+        margin-right: 10px;
+        padding: 0 19px;
     }
 }

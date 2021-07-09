@@ -129,6 +129,37 @@
 #tarteaucitronRoot #tarteaucitronAlertBig.ttacjs .ttacjs__accept:hover {
   background-color: transparent !important;
 }
+
+#tarteaucitronRoot #tarteaucitronAlertBig.ttacjs .ttacjs__refuse {
+  height: 55px;
+  padding: 0 13px;
+  margin: 0 0 15px;
+  border: 2px solid;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 2px;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: transparent !important;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  /* Small devices (tablets and up) */
+}
+@media (min-width: 768px) {
+  #tarteaucitronRoot #tarteaucitronAlertBig.ttacjs .ttacjs__refuse {
+    min-width: 315px;
+  }
+}
+#tarteaucitronRoot #tarteaucitronAlertBig.ttacjs .ttacjs__refuse:hover {
+  background-color: transparent !important;
+}
 #tarteaucitronRoot #tarteaucitronAlertBig.ttacjs .ttacjs__personnalize {
   margin: 0 15px;
   background-color: transparent !important;

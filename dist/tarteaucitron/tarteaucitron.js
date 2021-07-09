@@ -9,7 +9,7 @@ var scripts = document.getElementsByTagName('script'),
     tarteaucitronForceLanguage = (tarteaucitronForceLanguage === undefined) ? '' : tarteaucitronForceLanguage,
     tarteaucitronForceExpire = (tarteaucitronForceExpire === undefined) ? '' : tarteaucitronForceExpire,
     tarteaucitronCustomText = (tarteaucitronCustomText === undefined) ? '' : tarteaucitronCustomText,
-    timeExipre = 31536000000,
+    timeExipre = 15778800000,
     tarteaucitronProLoadServices,
     tarteaucitronNoAdBlocker = false;
 

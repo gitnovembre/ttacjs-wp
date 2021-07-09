@@ -10,7 +10,9 @@ $image = $_POST['ttacjs_image'];
 $explanation = $_POST['ttacjs_explanation'];
 $color = $_POST['ttacjs_color'];
 $textColor = $_POST['ttacjs_textColor'];
-$buttonText = $_POST['ttacjs_buttonText'];
+$buttonTextAccept = $_POST['ttacjs_buttonTextAccept'];
+$buttonTextRefuse = $_POST['ttacjs_buttonTextRefuse'];
+$buttonTextPersonnalize = $_POST['ttacjs_buttonTextPersonnalize'];
 
 
 
@@ -24,4 +26,6 @@ update_option( 'ttacjs_title', stripslashes($title) );
 update_option( 'ttacjs_explanation', stripslashes($explanation) );
 update_option( 'ttacjs_color', stripslashes($color) );
 update_option( 'ttacjs_textColor', stripslashes($textColor) );
-update_option( 'ttacjs_buttonText', stripslashes($buttonText) );
+update_option( 'ttacjs_buttonTextAccept', stripslashes($buttonTextAccept) );
+update_option( 'ttacjs_buttonTextRefuse', stripslashes($buttonTextRefuse) );
+update_option( 'ttacjs_buttonTextPersonnalize', stripslashes($buttonTextPersonnalize) );
