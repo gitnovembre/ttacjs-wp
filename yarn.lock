@@ -3626,10 +3626,10 @@ tar@^6.0.2:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tarteaucitronjs@^1.9.3:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.9.3.tgz#996e45bddf211ffac6e8442c397c536c2a17e7da"
-  integrity sha512-K/0Sz/BMTKYxS6tHn3vDWOWNZTEFvrHE8wkMvxOagrbWvI/JqyIFIcGKfNXpxwyUUhOUeKTL+2AtRRcl/RZV5A==
+tarteaucitronjs@^1.9.7:
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.9.7.tgz#219b66e9c4e0c7d1e12b90de88edf01ab76a96b7"
+  integrity sha512-HDA+mEx/zKRWX6i3HO/x7XpO10uCrUSLtbkJ1Dc+AB/5yMu9yl4gsoPx25P8OqqZw8YPI3lRC85Sc86SzxMeVw==
 
 terser-webpack-plugin@^5.1.3:
   version "5.1.4"
